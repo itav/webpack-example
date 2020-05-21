@@ -1,15 +1,17 @@
 import path from 'path';
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-
+import {CleanWebpackPlugin} from 'clean-webpack-plugin';
+import TerserJSPlugin from 'terser-webpack-plugin';
+import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 
 export default {
   mode: 'production',
   entry: {
-    dupa: './src/index.js'
+    main: './src/index.js'
   },
   output: {
-    filename: 'main_[name]_[hash].js',
+    filename: '[name]_[hash].js',
     path: path.resolve(__dirname, 'public')
   },
   module: {
@@ -21,7 +23,29 @@ export default {
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader']
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true
+            }
+          }
+        ],
+        exclude: [/node_modules/, /src\/style/]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '../'
+            }
+          },
+          'css-loader'
+        ],
+        include: [/node_modules/, /src\/style/]
       }
     ]
   },
@@ -33,6 +57,15 @@ export default {
     }),
     new MiniCssExtractPlugin({
       filename: 'assets/[name]_[hash].css',
+    }),
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: ['**/*', '!static', '!static/**/*', '!graph'],
     })
-  ]
+  ],
+  resolve: {
+    modules: [path.resolve(__dirname, 'src'), 'node_modules']
+  },
+  optimization: {
+    minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+  }
 }

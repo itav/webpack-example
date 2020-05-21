@@ -1,17 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import cssIndex from './index.css';
 import 'bootstrap/dist/css/bootstrap.css'
+import Example from "feature/component/example";
 
 function Component() {
   return (
-    <div className={'medium'}>Component</div>
+    <div className={cssIndex.medium}>Component</div>
   );
 }
 
 function App() {
   return (
-    <Component />
+    <div>
+      <Component />
+      <Example />
+    </div>
+
   );
 }
 

@@ -1,0 +1,8 @@
+@value _dark: #5a6268;
+@value _blue: #0000bb;
+
+.myGrayColor {
+    background-color: _dark;
+    width: 124px;
+    height: 185px;
+}

@@ -1,0 +1,11 @@
+@value _blue from '../../style/colors.css';
+
+.blue {
+    background-color: _blue;
+    width: 100px;
+    height: 230px;
+}
+
+.example-class {
+    border-radius: 1px;
+}
