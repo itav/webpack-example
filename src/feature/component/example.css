@@ -1,7 +1,7 @@
 @value _blue from '../../style/colors.css';
 
 .blue {
-    background-color: _blue;
+    background-color: red;
     width: 100px;
     height: 230px;
 }

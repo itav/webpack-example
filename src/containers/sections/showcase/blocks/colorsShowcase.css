@@ -1,0 +1,83 @@
+@value _black, _lighterBlack, _dark, _gray, _grayHover, _lightGray, _lightHover, _lightGrayBorder, _white, _blue, _orange, _buttonHover, _red, _green from "~style/colors.css";
+
+.color {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.square {
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+}
+
+.black {
+    background-color: _black;
+    composes: square;
+}
+
+.lighterBlack {
+    background-color: _lighterBlack;
+    composes: square;
+}
+
+.dark {
+    background-color: _dark;
+    composes: square;
+}
+
+.gray {
+    background-color: _gray;
+    composes: square;
+}
+
+.grayHover {
+    background-color: _grayHover;
+    composes: square;
+}
+
+.lightGray {
+    background-color: _lightGray;
+    composes: square;
+}
+
+.lightHover {
+    background-color: _lightHover;
+    composes: square;
+}
+
+.lightGrayBorder {
+    background-color: _lightGrayBorder;
+    composes: square;
+}
+
+.white {
+    background-color: _white;
+    composes: square;
+}
+
+.orange {
+    background-color: _orange;
+    composes: square;
+}
+
+.blue {
+    background-color: _blue;
+    composes: square;
+}
+
+.buttonHover {
+    background-color: _buttonHover;
+    composes: square;
+}
+
+.red {
+    background-color: _red;
+    composes: square;
+}
+
+.green {
+    background-color: _green;
+    composes: square;
+}

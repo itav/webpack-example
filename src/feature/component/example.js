@@ -6,7 +6,7 @@ function Example() {
   return (
     <div>
       <div className={'myGrayColor'}>From Example</div>
-      <div className={cssExample.blue}>Another From Example</div>
+      <div className={cssExample.blue}>Another Brick</div>
     </div>
   );
 }

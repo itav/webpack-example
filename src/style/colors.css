@@ -1,5 +1,19 @@
 @value _dark: #5a6268;
 @value _blue: #0000bb;
+@value _black: #000000;
+@value _lighterBlack: #231f20;
+@value _dark: #231f20;
+@value _gray: #696969;
+@value _grayHover: #404040;
+@value _lightGray: #BBBBBB;
+@value _lightHover: #e7e7e7;
+@value _lightGrayBorder: #eee;
+@value _white: #fff;
+@value _orange: #ff6504;
+@value _blue: #00a2e2;
+@value _green: #57dd56;
+@value _red: #ce000c;
+@value _buttonHover: #017bab;
 
 .myGrayColor {
     background-color: _dark;
